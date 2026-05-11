@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Phone Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="phone-frame">
+        <!-- Phone Notch -->
+        <div class="notch">
+            <div class="notch-content">
+                <span class="time" id="time">9:41</span>
+                <div class="status-icons">
+                    <span>📶</span>
+                    <span>📡</span>
+                    <span>🔋</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calculator Container -->
+        <div class="calculator-container">
+            <!-- Theme Toggle -->
+            <div class="theme-toggle">
+                <button id="themeBtn" onclick="toggleTheme()">🌙</button>
+            </div>
+
+            <!-- Display -->
+            <div class="display">
+                <div class="history-display" id="historyDisplay">0</div>
+                <div class="main-display" id="display">0</div>
+            </div>
+
+            <!-- Buttons Grid -->
+            <div class="buttons-grid">
+                <!-- Row 1 -->
+                <button class="btn function-btn" onclick="clearDisplay()">AC</button>
+                <button class="btn function-btn" onclick="deleteLast()">DEL</button>
+                <button class="btn function-btn" onclick="appendOperator('%')">%</button>
+                <button class="btn operator-btn" onclick="appendOperator('/')">÷</button>
+
+                <!-- Row 2 -->
+                <button class="btn" onclick="appendNumber('7')">7</button>
+                <button class="btn" onclick="appendNumber('8')">8</button>
+                <button class="btn" onclick="appendNumber('9')">9</button>
+                <button class="btn operator-btn" onclick="appendOperator('*')">×</button>
+
+                <!-- Row 3 -->
+                <button class="btn" onclick="appendNumber('4')">4</button>
+                <button class="btn" onclick="appendNumber('5')">5</button>
+                <button class="btn" onclick="appendNumber('6')">6</button>
+                <button class="btn operator-btn" onclick="appendOperator('-')">−</button>
+
+                <!-- Row 4 -->
+                <button class="btn" onclick="appendNumber('1')">1</button>
+                <button class="btn" onclick="appendNumber('2')">2</button>
+                <button class="btn" onclick="appendNumber('3')">3</button>
+                <button class="btn operator-btn" onclick="appendOperator('+')">+</button>
+
+                <!-- Row 5 -->
+                <button class="btn zero-btn" onclick="appendNumber('0')">0</button>
+                <button class="btn" onclick="appendNumber('.')">.</button>
+                <button class="btn equals-btn" onclick="calculate()">=</button>
+
+                <!-- Extra Features Row -->
+                <button class="btn extra-btn" onclick="calculateSquareRoot()" title="Square Root">√</button>
+                <button class="btn extra-btn" onclick="calculatePower()" title="Power">x²</button>
+                <button class="btn extra-btn" onclick="calculateReciprocal()" title="1/x">1/x</button>
+                <button class="btn extra-btn" onclick="toggleSign()" title="Toggle Sign">+/−</button>
+            </div>
+
+            <!-- History Panel -->
+            <div class="history-panel" id="historyPanel">
+                <div class="history-header">
+                    <span>History</span>
+                    <button class="close-btn" onclick="toggleHistory()">✕</button>
+                </div>
+                <div class="history-list" id="historyList">
+                    <p class="empty-history">No history yet</p>
+                </div>
+            </div>
+
+            <!-- History Toggle Button -->
+            <button class="history-btn" onclick="toggleHistory()" title="Show History">📜</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
